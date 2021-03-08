@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tokoonline/helper/constant.dart';
-import 'package:flutter_tokoonline/screen/dashboard.dart';
+import 'package:flutter_tokoonline/screen/landingpage.dart';
 
 class LauncherPage extends StatefulWidget {
   @override
@@ -27,7 +27,7 @@ class _LauncherPageState extends State<LauncherPage> {
     return new Timer(duration, (){
       Navigator.of(context)
       .pushReplacement(new MaterialPageRoute(builder: (_) {
-        return DashboardPage();
+        return LandingPage();
       }));
     });
   }
