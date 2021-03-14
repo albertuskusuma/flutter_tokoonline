@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tokoonline/helper/constant.dart';
 import 'package:flutter_tokoonline/screen/categorypage.dart';
-import 'package:flutter_tokoonline/screen/component/searchdashboard.dart';
+import 'package:flutter_tokoonline/screen/component/homedashboard.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -73,7 +73,7 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
         physics: NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: [
-          SearchDashboard(),
+          HomeDashboard(),
           CategoryPage()
         ],
       )
