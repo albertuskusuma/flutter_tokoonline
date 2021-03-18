@@ -15,13 +15,14 @@ class _HomeDashboardState extends State<HomeDashboard> {
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
           child:
-              // Best Seller
 
-              // Title
+              // Title Best Seller
               Column(
             children: [
               Container(
-                child: Row(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
@@ -36,129 +37,192 @@ class _HomeDashboardState extends State<HomeDashboard> {
                             color: Colors.lightBlue[600],
                             fontSize: 12),
                       ),
-                    ]),
+                    ],
+                  ),
+                ),
               ),
+              // Title Best Seller
 
-              // Container(
-              //   height: 200,
-              //   child: ListView.builder(
-              //     scrollDirection: Axis.horizontal,
-              //     shrinkWrap: true,
-              //     physics: ClampingScrollPhysics(),
-              //     itemCount: 5,
-              //     itemBuilder: (BuildContext context, index) =>
-              //     Column(
-              //       mainAxisSize: MainAxisSize.min,
-              //       children: <Widget>[
-              //         Expanded(
-              //           child: Column(
-              //             children: [
-              //               Stack(
-              //                 children: <Widget>[
-              //                   Image.asset(
-              //                     'assets/laptop.jpg',
-              //                     fit: BoxFit.cover,
-              //                     height: 100,
-              //                   ),
-              //                   Positioned(
-              //                     top: 1,
-              //                     right: 9,
-              //                     child: Container(
-              //                       alignment: Alignment.center,
-              //                       width: 24,
-              //                       height: 24,
-              //                       decoration: BoxDecoration(
-              //                           shape: BoxShape.circle,
-              //                           color: Colors.orange[800]),
-              //                       child: Text(
-              //                         '30%',
-              //                         style: TextStyle(
-              //                             color: Colors.white, fontSize: 10),
-              //                       ),
-              //                     ),
-              //                   ),
-              //                 ],
-              //               ),
-              //               SizedBox(
-              //                 height: 6,
-              //               ),
-              //               Positioned(
-              //                 left: -100,
-              //                 child: Text('sasa'))
-              //             ],
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // )
-
+              // Best Seller
               Container(
-                height: MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.35,
                 padding: EdgeInsets.all(8),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
-                  itemBuilder: (BuildContext context, index) => Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.grey[300]),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(blurRadius: 5, color: Colors.grey[300])
-                        ]),
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: <Widget>[
-                        Expanded(
-                          child: Stack(
-                            children: [
-                              Image.asset(
-                                'assets/laptop.jpg',
-                                fit: BoxFit.cover,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.3,
-                              ),
-                              Positioned(
-                                top: 0,
-                                right: 0,
-                                child: Container(
-                                  height: 24,
-                                  width: 24,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.indigo),
-                                  child: Text(
-                                    '30%',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Colors.white),
+                  itemBuilder: (BuildContext context, index) => Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: SizedBox(
+                      width: 120,
+                      child: InkWell(
+                        onTap: () {
+                          print('lala');
+                        },
+                        child: Column(
+                          children: [
+                            Column(
+                              children: [
+                                AspectRatio(
+                                  aspectRatio: 1.02,
+                                  child: Container(
+                                    padding: EdgeInsets.all(2),
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color(0xFF979797).withOpacity(0.1),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(right: 5,top:2),
+                                          alignment: Alignment.topRight,
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            width: 26,
+                                            height: 26,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.indigo),
+                                            child: Text(
+                                              "30%",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 12,color: Colors.white),
+                                            ),
+                                          ),
+                                        ),
+                                        Image.asset(
+                                            'assets/ps4_console_white_1.png',
+                                          ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
+                                Text(
+                                  'Laptop baru asus murah meriah harga nego sekarang',
+                                  style: TextStyle(color: Colors.black),
+                                  maxLines: 2,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('Rp 12.000.000'),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        productTitle.length > 15
-                            ? Text('${productTitle.substring(0, 14)}...')
-                            : Text('${productTitle}'),
-                        Text('Rp 12.000.000')
-                        
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
+              // Best Seller
+
+              // Title New Product
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'New Product',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue[600],
+                            fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // Title New Product
+
+              // New Product
+              Container(
+                height: MediaQuery.of(context).size.height * 0.35,
+                padding: EdgeInsets.all(8),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, index) => Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: SizedBox(
+                      width: 120,
+                      child: InkWell(
+                        onTap: () {
+                          print('lala');
+                        },
+                        child: Column(
+                          children: [
+                            Column(
+                              children: [
+                                AspectRatio(
+                                  aspectRatio: 1.02,
+                                  child: Container(
+                                    padding: EdgeInsets.all(2),
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color(0xFF979797).withOpacity(0.1),
+                                        borderRadius:
+                                            BorderRadius.circular(15)),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(right: 5,top:2),
+                                          alignment: Alignment.topRight,
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            width: 26,
+                                            height: 26,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.indigo),
+                                            child: Text(
+                                              "30%",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 12,color: Colors.white),
+                                            ),
+                                          ),
+                                        ),
+                                        Image.asset(
+                                            'assets/ps4_console_white_1.png',
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  'Laptop baru asus murah meriah harga nego sekarang',
+                                  style: TextStyle(color: Colors.black),
+                                  maxLines: 2,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('Rp 12.000.000'),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // New Product
             ],
           ),
         ),
       ),
-      // Title
-
-      // Best Seller
     );
   }
 }

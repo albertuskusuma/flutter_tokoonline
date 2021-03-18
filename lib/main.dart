@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tokoonline/launcher.dart';
 import 'package:flutter/services.dart' ;
+import 'package:flutter_tokoonline/screen/landingpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LauncherPage(),
+      // home: LauncherPage(),
+      home: LandingPage(),
     );
   }
 }

@@ -33,28 +33,32 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          onTap: (){
+        title: Column(
+          children: [
+            TextField(
+              onTap: (){
 
-          },
-          readOnly: true,
-          style: TextStyle(fontSize: 15),
-          decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: Icon(
-              Icons.search,
-              color: Palette.bg2,
-            ),
-            contentPadding: const EdgeInsets.symmetric(vertical:10.0),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: new BorderSide(
-                color: Colors.orange[900]
+              },
+              readOnly: true,
+              style: TextStyle(fontSize: 15),
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Palette.bg2,
+                ),
+                contentPadding: const EdgeInsets.symmetric(vertical:10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: new BorderSide(
+                    color: Colors.orange[900]
+                  ),
+                ),
+                fillColor: Color(0xfff3f3f4),
+                filled: true
               ),
             ),
-            fillColor: Color(0xfff3f3f4),
-            filled: true
-          ),
+          ],
         ),
         backgroundColor: Palette.bg4,
         bottom: TabBar(
