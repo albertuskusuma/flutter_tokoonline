@@ -27,6 +27,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
         appBar: AppBar(
           // title: Text(widget.paramId),
           title: Text('Product Detail'),
+          backgroundColor: Color.fromRGBO(255, 122, 201, 0.9),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -185,7 +186,7 @@ class BottomNavBar extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               // background color
-              primary: Colors.pink[300],
+              primary: Color.fromRGBO(104, 113, 223, 0.7),
               textStyle: TextStyle(fontSize: 17),
             ),
             child: Text('Buy Now'.toUpperCase()),

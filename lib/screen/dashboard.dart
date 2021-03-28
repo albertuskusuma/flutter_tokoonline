@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tokoonline/screen/detailproductpage.dart';
+import 'package:flutter_tokoonline/screen/favoritepage.dart';
+
+import 'cartpage.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -286,13 +289,15 @@ Widget topNav(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.56,
+                  width: MediaQuery.of(context).size.width * 0.68,
                   height: MediaQuery.of(context).size.height * 0.07,
                   decoration: BoxDecoration(
                       color: Color(0xFF979797).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(15)),
                   child: TextField(
-                    onTap: () {},
+                    onTap: () {
+                      print('Go To Search Page');
+                    },
                     readOnly: true,
                     decoration: InputDecoration(
                         hintText: 'Search Product',
@@ -303,114 +308,70 @@ Widget topNav(BuildContext context) {
                   ),
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 13,
                 ),
 
                 // shopping cart
-                GestureDetector(
-                  onTap: () {
-                    print('shopping');
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.11,
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    decoration: BoxDecoration(
-                        color: Color(0xFF979797).withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        TextField(
-                          readOnly: true,
-                          decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.shopping_cart_sharp),
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none),
-                        ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                          alignment: Alignment.topRight,
-                          margin: EdgeInsets.only(top: 5, left: 4),
-                          child: Container(
-                            width: 18,
-                            height: 18,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xffc32c37),
-                              border: Border.all(color: Colors.white, width: 1),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.11,
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  decoration: BoxDecoration(
+                      color: Color(0xFF979797).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Stack(
+                    children: [
+                      TextField(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CartPage(),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: Center(
-                                child: Text(
-                                  "90",
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.white),
-                                ),
+                          );
+                        },
+                        readOnly: true,
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.shopping_cart_sharp),
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none),
+                      ),
+                      Container(
+                        width: 30,
+                        height: 30,
+                        alignment: Alignment.topRight,
+                        margin: EdgeInsets.only(top: 5, left: 4),
+                        child: Container(
+                          width: 18,
+                          height: 18,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xffc32c37),
+                            border: Border.all(color: Colors.white, width: 1),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(0.0),
+                            child: Center(
+                              child: Text(
+                                "90",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white),
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+
                 // shopping
 
                 SizedBox(
                   width: 12,
                 ),
 
-                GestureDetector(
-                  onTap: () {
-                    print('notifg');
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.11,
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    decoration: BoxDecoration(
-                        color: Color(0xFF979797).withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Stack(
-                      children: [
-                        TextField(
-                          readOnly: true,
-                          decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.notifications),
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none),
-                        ),
-                        Container(
-                          width: 30,
-                          height: 30,
-                          alignment: Alignment.topRight,
-                          margin: EdgeInsets.only(top: 5, left: 4),
-                          child: Container(
-                            width: 18,
-                            height: 18,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xffc32c37),
-                                border:
-                                    Border.all(color: Colors.white, width: 1)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: Center(
-                                child: Text(
-                                  "90",
-                                  style: TextStyle(
-                                      fontSize: 10, color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+               
               ],
             ),
           ),
